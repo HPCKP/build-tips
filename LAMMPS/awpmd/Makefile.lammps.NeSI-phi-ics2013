@@ -1,0 +1,6 @@
+# Settings that the LAMMPS build will import when this package library is used
+
+user-awpmd_SYSINC = -DMKL_ILP64 -I$(MKLROOT)/include -mmic
+user-awpmd_SYSLIB = ${MKLROOT}/lib/mic/libmkl_scalapack_ilp64.a -Wl,--start-group  ${MKLROOT}/lib/mic/libmkl_cdft_core.a ${MKLROOT}/lib/mic/libmkl_intel_ilp64.a ${MKLROOT}/lib/mic/libmkl_intel_thread.a ${MKLROOT}/lib/mic/libmkl_core.a ${MKLROOT}/lib/mic/libmkl_blacs_intelmpi_ilp64.a -Wl,--end-group -liomp5 -lpthread -lm
+user-awpmd_SYSPATH = -L/opt/intel/mkl/lib/mic
+
