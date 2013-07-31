@@ -36,8 +36,8 @@ LMP_INC =	-DLAMMPS_GZIP
 # PATH = path for MPI library
 # LIB = name of MPI library
 
-MPI_INC =  -I/opt/intel/impi/4.1.0.024/intel64/include -DMPICH_IGNORE_CXX_SEEK    
-MPI_PATH = -L/opt/intel/impi/4.1.0.024/intel64/lib
+MPI_INC =  -I${I_MPI_ROOT}/intel64/include -DMPICH_IGNORE_CXX_SEEK    
+MPI_PATH = -L${I_MPI_ROOT}/intel64/lib
 MPI_LIB =  -lpthread -lmpi 
 
 # FFT library, OPTIONAL
@@ -47,9 +47,9 @@ MPI_LIB =  -lpthread -lmpi
 # PATH = path for FFT library
 # LIB = name of FFT library
 
-FFT_INC =       -DFFT_SINGLE -I/opt/intel/composer_xe_2013.2.146/mkl/include/fftw
+FFT_INC =       -DFFT_SINGLE -Ii${MKLROOT}/mkl/include/fftw
 FFT_PATH = 
-FFT_LIB =	/opt/intel/composer_xe_2013.2.146/mkl/lib/intel64/libfftw2xc_single_intel.a
+FFT_LIB =	${MKLROOT}/lib/intel64/libfftw2xc_single_intel.a
 
 # JPEG library, OPTIONAL
 # see discussion in doc/Section_start.html#2_2 (step 7)
@@ -68,6 +68,11 @@ JPG_LIB =
 
 include	Makefile.package.settings
 include	Makefile.package
+
+# Path to src files
+
+vpath %.cpp ..
+vpath %.h ..
 
 EXTRA_INC = $(LMP_INC) $(PKG_INC) $(MPI_INC) $(FFT_INC) $(JPG_INC) $(PKG_SYSINC)
 EXTRA_PATH = $(PKG_PATH) $(MPI_PATH) $(FFT_PATH) $(JPG_PATH) $(PKG_SYSPATH)

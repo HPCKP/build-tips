@@ -2,5 +2,5 @@
 
 meam_SYSINC = -DMKL_ILP64 -I${MKLROOT}/include
 meam_SYSLIB = -lifcore -lsvml -liompstubs5 -limf  ${MKLROOT}/lib/intel64/libmkl_scalapack_ilp64.a -Wl,--start-group  ${MKLROOT}/lib/intel64/libmkl_cdft_core.a ${MKLROOT}/lib/intel64/libmkl_intel_ilp64.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_blacs_intelmpi_ilp64.a -Wl,--end-group -liomp5 -lpthread -lm
-meam_SYSPATH = -L/opt/intel/mkl/lib/intel64
+meam_SYSPATH = -L${MKLROOT}/lib/intel64
 

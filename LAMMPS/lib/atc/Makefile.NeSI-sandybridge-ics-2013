@@ -98,7 +98,7 @@ OBJ =   $(SRC:.cpp=.o)
 # the same MPI library that LAMMPS is built with
 
 CC =	        icc
-CCFLAGS =       -xhost -O3 -openmp -I../../src -I/opt/intel/impi/4.1.0.024/intel64/include -DMPICH_IGNORE_CXX_SEEK
+CCFLAGS =       -xhost -O3 -openmp -I../../src -I${I_MPI_ROOT}/intel64/include -DMPICH_IGNORE_CXX_SEEK
 ARCHIVE =	ar
 ARCHFLAG =	-rc
 DEPFLAGS =      -M

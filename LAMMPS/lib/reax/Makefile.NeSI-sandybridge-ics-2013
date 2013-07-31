@@ -24,7 +24,7 @@
 #
 # For Makefile.gfortran, try
 #
-# reax_SYSPATH = -L/usr/lib -L/share/apps/intel/2011/composer_xe_2011_sp1.10.319/compiler/lib/intel64
+# reax_SYSPATH = -L/usr/lib -L${MKLROOT}/lib/intel64
 # reax_SYSLIB = -lifcore -lsvml -liomp5 -limf
 
 SHELL = /bin/sh
